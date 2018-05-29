@@ -1,19 +1,21 @@
 package com.proceso.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.proceso.entities.ObjectEntity;
+import com.proceso.services.ProcessSchemaService;
 
 public class ProcessSchemaController implements ControllerInterface {
 
+	ProcessSchemaService psService = new ProcessSchemaService();
 	public ProcessSchemaController() {
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void Create(ObjectEntity entity) {
-		// TODO Auto-generated method stub
-
+		psService.create(entity);
 	}
 
 	@Override
@@ -35,7 +37,7 @@ public class ProcessSchemaController implements ControllerInterface {
 	}
 
 	@Override
-	public List<ObjectEntity> ReadAll() {
+	public ArrayList<ObjectEntity> ReadAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -16,17 +16,42 @@ public class App {
 
 	static PrintStream out = System.out;
 	static BufferedReader in =new BufferedReader(new InputStreamReader(System.in));
-	static AppUserType aut = new AppUserType();
-	static InputTypeController iController = new InputTypeController();
-	static UserController uController =  new UserController();
+	static AppUserType AppUserT = new AppUserType();
+	static AppInputType AppInputT = new AppInputType();
+	static AppUser appUser = new AppUser();
+	static AppProcess appProcess = new AppProcess();
+	static User logUser = new User();
 	public static void main(String[] args) {
+		try {
+			logUser = appUser.Login();
+			if(logUser == null) {
+				out.println("no User found");
+			} else {
+				out.println(logUser.getUserGroup().getUserTypeName());
+				if(logUser.getUserGroup().getUserTypeName().equals("Admin")) {
+					MenuAdmin();
+				} else {
+					out.println("No es admin");
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	static void MenuAdmin() {
 		int opNum = 0;
 		do 
 		{
 
-			out.println("Bienvenido a nuestro sistema que desea agregar?");
+			out.println("Bienvenido a nuestro sistema que desea hacer?");
 			out.println("1. Manejar grupos de usuario");
 			out.println("2. Manejar tipos de variables");
+			out.println("3. Manejar usuarios");
+			out.println("4. Manejo de procesos");
+			out.println("0. Salir");
 	
 			
 			try {
@@ -38,23 +63,28 @@ public class App {
 			}
 		
 		}while( opNum != 0);
-		
 	}
 	
 	static void ExecuteAction(int op) throws IOException {
-		int opNum = 0;
 		switch(op) {
 		case 1:
-			aut.Menu();
+			AppUserT.Menu();
 			break;
 		
 		case 2:
-			out.println("Digite el tipo de variable que desea agregar");
-			InputType newInputType = new InputType(in.readLine());
-			iController.Create(newInputType);
+			AppInputT.Menu();
 			break;
+		case 3:
+			appUser.Menu();
+			break;
+		case 4:
+			appProcess.Menu();
+			break;
+			
 		}
 	}
+	
+	
 	
 	
 

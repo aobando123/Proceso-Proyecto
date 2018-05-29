@@ -7,9 +7,11 @@ import org.mongodb.morphia.Key;
 import org.mongodb.morphia.query.UpdateOperations;
 import org.mongodb.morphia.query.UpdateResults;
 
+import com.mongodb.DBCollection;
 import com.mongodb.WriteResult;
 import com.proceso.connection.ConnectionService;
 import com.proceso.entities.ObjectEntity;
+import com.proceso.entities.UserType;
 import com.proceso.entities.InputType;
 
 public class InputService implements ServiceInterface {
@@ -20,13 +22,13 @@ public class InputService implements ServiceInterface {
 	}
 	@Override
 	public Key<InputType> create(ObjectEntity entity) {
-		// TODO Auto-generated method stub
-		return null;
+		InputType inputType = (InputType) entity;
+		return con.datastore().save(inputType);
 	}
 	@Override
 	public InputType read(ObjectId id) {
 		// TODO Auto-generated method stub
-		return null;
+		return con.datastore().get(InputType.class, id);
 	}
 	
 	 public UpdateResults updates(ObjectEntity entity, UpdateOperations<InputType> operations) {
@@ -35,22 +37,22 @@ public class InputService implements ServiceInterface {
 	}
 	@Override
 	public WriteResult delete(ObjectEntity entity) {
-		// TODO Auto-generated method stub
-		return null;
+		InputType inputType = (InputType) entity;
+		return con.datastore().delete(inputType);
 	}
 	@Override
 	public UpdateOperations<InputType> createOperations() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
 	public List<InputType> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		DBCollection m = con.datastore().getCollection( UserType.class );
+		List<InputType> list = con.datastore().find( InputType.class ).asList();
+		
+		return list;
 	}
 	@Override
 	public UpdateResults update(ObjectEntity entity, UpdateOperations operations) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

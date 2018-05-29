@@ -31,6 +31,30 @@ public class ToDo extends ObjectEntity{
 		// TODO Auto-generated constructor stub
 	}
 
+	public InputType getToDoType() {
+		return ToDoType;
+	}
+
+	public void setToDoType(InputType toDoType) {
+		ToDoType = toDoType;
+	}
+
+	public List<ToDoOption> getOptions() {
+		return Options;
+	}
+
+	public void setOptions(List<ToDoOption> options) {
+		Options = options;
+	}
+
+	public ToDoOption getSelectedOption() {
+		return SelectedOption;
+	}
+
+	public void setSelectedOption(ToDoOption selectedOption) {
+		SelectedOption = selectedOption;
+	}
+
 	/**
 	 * @return the toDoDescription
 	 */
@@ -44,5 +68,7 @@ public class ToDo extends ObjectEntity{
 	public void setToDoDescription(String toDoDescription) {
 		ToDoDescription = toDoDescription;
 	}
+
+
 
 }

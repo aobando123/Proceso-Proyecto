@@ -23,6 +23,18 @@ public class TaskSchema extends ObjectEntity{
 		super();
 		setTaskName(taskName);
 	}
+	public UserType getAssignedGroup() {
+		return AssignedGroup;
+	}
+	public void setAssignedGroup(UserType assignedGroup) {
+		AssignedGroup = assignedGroup;
+	}
+	public List<ToDo> getAssignedToDos() {
+		return AssignedToDos;
+	}
+	public void setAssignedToDos(List<ToDo> assignedToDos) {
+		AssignedToDos = assignedToDos;
+	}
 	/**
 	 * @return the taskName
 	 */
