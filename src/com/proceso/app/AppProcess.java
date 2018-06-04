@@ -8,13 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.proceso.controller.ProcessSchemaController;
-import com.proceso.controller.UserController;
 import com.proceso.entities.InputType;
 import com.proceso.entities.ProcessSchema;
 import com.proceso.entities.TaskSchema;
 import com.proceso.entities.ToDo;
 import com.proceso.entities.ToDoOption;
-import com.proceso.entities.User;
 
 public class AppProcess {
 

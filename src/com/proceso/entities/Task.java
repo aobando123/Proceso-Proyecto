@@ -1,6 +1,5 @@
 package com.proceso.entities;
 
-import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Reference;
 @Entity()

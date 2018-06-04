@@ -1,8 +1,6 @@
 package com.proceso.controller;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import com.proceso.entities.ObjectEntity;
 import com.proceso.services.ProcessSchemaService;
 

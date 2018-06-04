@@ -1,16 +1,9 @@
 package com.proceso.app;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.util.List;
-
-import org.bson.types.ObjectId;
-import org.mongodb.morphia.Key;
-
-import com.proceso.entities.*;
-import com.proceso.controller.*;;
+import com.proceso.entities.*;;
 public class App {
 
 
@@ -22,22 +15,23 @@ public class App {
 	static AppProcess appProcess = new AppProcess();
 	static User logUser = new User();
 	public static void main(String[] args) {
-		try {
-			logUser = appUser.Login();
-			if(logUser == null) {
-				out.println("no User found");
-			} else {
-				out.println(logUser.getUserGroup().getUserTypeName());
-				if(logUser.getUserGroup().getUserTypeName().equals("Admin")) {
-					MenuAdmin();
-				} else {
-					out.println("No es admin");
-				}
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			logUser = appUser.Login();
+//			if(logUser == null) {
+//				out.println("no User found");
+//			} else {
+//				out.println(logUser.getUserGroup().getUserTypeName());
+//				if(logUser.getUserGroup().getUserTypeName().equals("Admin")) {
+//					MenuAdmin();
+//				} else {
+//					out.println("No es admin");
+//				}
+//			}
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		MenuAdmin();
 
 	}
 

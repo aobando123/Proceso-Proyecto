@@ -1,10 +1,7 @@
 package com.proceso.entities;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Indexed;
-import org.mongodb.morphia.annotations.Indexes;
-import org.mongodb.morphia.annotations.Property;
 import org.mongodb.morphia.annotations.IndexOptions;
-import org.mongodb.morphia.annotations.Field;
 @Entity()
 
 public class UserType extends ObjectEntity {

@@ -13,7 +13,6 @@ import com.mongodb.WriteResult;
 import com.proceso.connection.ConnectionService;
 import com.proceso.entities.ObjectEntity;
 import com.proceso.entities.User;
-import com.proceso.entities.UserType;
 
 public class UserService implements ServiceInterface {
 
